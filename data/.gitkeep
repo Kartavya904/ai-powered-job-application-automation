@@ -1,0 +1,4 @@
+# This file ensures the data directory is tracked by git
+# Add your personal files (resumes, transcripts, etc.) here
+# These files should be in .gitignore for privacy
+

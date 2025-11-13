@@ -1,0 +1,126 @@
+# AI-Powered Job Application Automation - Configuration File
+
+# Job Search Preferences
+job_preferences:
+  # Job titles/keywords to search for
+  target_titles:
+    - "Software Engineer"
+    - "Machine Learning Engineer"
+    - "Data Scientist"
+    - "Backend Developer"
+    - "Full Stack Developer"
+  
+  # Location preferences
+  locations:
+    - "Remote"
+    - "San Francisco, CA"
+    - "New York, NY"
+  
+  # Remote work preference
+  remote_only: false
+  
+  # Visa sponsorship required
+  requires_visa_sponsorship: false
+  
+  # Keywords that should be present in job description
+  required_keywords: []
+  
+  # Keywords that should exclude a job
+  excluded_keywords:
+    - "internship"
+    - "intern"
+    - "contractor"
+    - "contract"
+
+# AI Model Settings
+ai_settings:
+  # Fit score threshold (0-10 scale)
+  # Jobs below this score will be automatically skipped
+  min_fit_score: 3.0
+  
+  # Ambiguous score range - jobs in this range will be flagged for review
+  ambiguous_min: 3.0
+  ambiguous_max: 5.0
+  
+  # Embedding model to use
+  embedding_model: "all-MiniLM-L6-v2"  # Lightweight, fast, local
+  
+  # Vector database settings
+  vector_db:
+    dimension: 384  # Dimension for all-MiniLM-L6-v2
+    index_type: "flat"  # Options: flat, ivf, hnsw
+
+# Resume Settings
+resume:
+  # Path to primary resume (relative to project root or absolute)
+  primary_resume: "data/resume.pdf"
+  
+  # Additional resumes for different role types
+  role_specific_resumes:
+    # "Software Engineer": "data/resume_sw.pdf"
+    # "Data Scientist": "data/resume_ds.pdf"
+  
+  # Cover letter template (optional)
+  cover_letter_template: "data/cover_letter.txt"
+
+# Automation Settings
+automation:
+  # Number of jobs to process per run
+  jobs_per_run: 20
+  
+  # Delay between actions (seconds)
+  action_delay: 2.0
+  
+  # Maximum retries for failed operations
+  max_retries: 3
+  
+  # Retry backoff multiplier
+  retry_backoff: 2.0
+  
+  # Timeout for page loads (seconds)
+  page_timeout: 30
+  
+  # Headless browser mode
+  headless: false
+  
+  # Screenshot on errors
+  screenshot_on_error: true
+
+# Company List
+company_list:
+  # Path to company list CSV
+  csv_path: "data/company_list.csv"
+  
+  # Resume on CAPTCHA encounter
+  resume_on_captcha: true
+
+# Logging Settings
+logging:
+  # Log level: DEBUG, INFO, WARNING, ERROR, CRITICAL
+  level: "INFO"
+  
+  # Log file path
+  log_file: "logs/run.log"
+  
+  # Maximum log file size (MB)
+  max_log_size: 10
+  
+  # Number of backup log files to keep
+  backup_count: 5
+
+# Security Settings
+security:
+  # Path to encrypted secrets file
+  secrets_file: "secrets.yaml.encrypted"
+  
+  # Master password prompt (set to false to use environment variable)
+  prompt_for_password: true
+
+# Database Settings
+database:
+  # SQLite database path
+  db_path: "applied_jobs.db"
+  
+  # Auto-backup database
+  auto_backup: true
+
